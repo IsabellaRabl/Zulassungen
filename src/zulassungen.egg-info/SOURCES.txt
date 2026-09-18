@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/zulassungen/__init__.py
+src/zulassungen/buckets.py
+src/zulassungen/explore.py
+src/zulassungen/extract.py
+src/zulassungen/main.py
+src/zulassungen.egg-info/PKG-INFO
+src/zulassungen.egg-info/SOURCES.txt
+src/zulassungen.egg-info/dependency_links.txt
+src/zulassungen.egg-info/requires.txt
+src/zulassungen.egg-info/top_level.txt
+src/zulassungen/schema/demographics.py
+src/zulassungen/schema/merged_results.py
