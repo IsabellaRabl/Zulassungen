@@ -3,6 +3,7 @@ from pathlib import Path
 
 from zulassungen.buckets import age_bucket, bmi_bucket
 from zulassungen.schema.demographics import DemographicsSchema
+from zulassungen.schema.merged_results import MergedResultsSchema
 from zulassungen.validate_json import validate_json
 from zulassungen.cross_validation import validate_observers
 
@@ -41,6 +42,19 @@ def main() -> None:
     else:
         print("Observer validation failed.")
     print()
+
+    print("5) MERGED RESULTS VALIDATION")
+    try:
+        valid_results = MergedResultsSchema.validate(csv_df)
+        print(f"{len(valid_results)} lines validated.\n")
+    except Exception as e:
+        print("Validation failed:")
+        print(e)
+        print()
+
+    print("6) MEAN OBSERVER")
+    mean = valid_results.groupby(["Exam ID", "Parameter"])["Automated output (AutoMM measurement without ECG on detected frame)"].mean()
+    print(mean)
 
 
 
