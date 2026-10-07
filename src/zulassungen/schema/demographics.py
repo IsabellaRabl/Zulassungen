@@ -3,6 +3,10 @@ from pandera.typing import Series
 
 
 class DemographicsSchema(pa.DataFrameModel):
+    """
+    Step 1 and 1.1 - Pandera Validation
+    -> used on resources/demographics_example.txt
+    """
     study_uid: Series[str]
     age: Series[int] = pa.Field(ge=0, le=120)
     gender: Series[str] = pa.Field(isin=["M", "F"])

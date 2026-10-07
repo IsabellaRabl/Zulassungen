@@ -1,3 +1,8 @@
+"""
+Step 2 - Buckets
+-> generated based on resources/demographics_def.py
+"""
+
 def age_bucket(age: int) -> str:
     if age < 30:
         return "less_than_30"
